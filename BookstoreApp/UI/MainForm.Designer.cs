@@ -30,11 +30,11 @@
         {
             panel1 = new Panel();
             label2 = new Label();
-            label1 = new Label();
+            productsLabel = new Label();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
             label3 = new Label();
-            label4 = new Label();
+            customersLabel = new Label();
             pictureBox2 = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -45,7 +45,7 @@
             // panel1
             // 
             panel1.Controls.Add(label2);
-            panel1.Controls.Add(label1);
+            panel1.Controls.Add(productsLabel);
             panel1.Controls.Add(pictureBox1);
             panel1.Location = new Point(35, 12);
             panel1.Name = "panel1";
@@ -61,15 +61,18 @@
             label2.TabIndex = 2;
             label2.Text = "Manage the catalog of products";
             // 
-            // label1
+            // productsLabel
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 30F, FontStyle.Bold);
-            label1.Location = new Point(63, 198);
-            label1.Name = "label1";
-            label1.Size = new Size(190, 54);
-            label1.TabIndex = 1;
-            label1.Text = "Products";
+            productsLabel.AutoSize = true;
+            productsLabel.Font = new Font("Segoe UI", 30F, FontStyle.Bold);
+            productsLabel.Location = new Point(63, 198);
+            productsLabel.Name = "productsLabel";
+            productsLabel.Size = new Size(190, 54);
+            productsLabel.TabIndex = 1;
+            productsLabel.Text = "Products";
+            productsLabel.Click += productsLabel_Click;
+            productsLabel.MouseLeave += productsLabel_MouseLeave;
+            productsLabel.MouseHover += productsLabel_MouseHover;
             // 
             // pictureBox1
             // 
@@ -83,7 +86,7 @@
             // panel2
             // 
             panel2.Controls.Add(label3);
-            panel2.Controls.Add(label4);
+            panel2.Controls.Add(customersLabel);
             panel2.Controls.Add(pictureBox2);
             panel2.Location = new Point(347, 12);
             panel2.Name = "panel2";
@@ -99,15 +102,15 @@
             label3.TabIndex = 2;
             label3.Text = "Manage the list of customers";
             // 
-            // label4
+            // customersLabel
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 30F, FontStyle.Bold);
-            label4.Location = new Point(30, 198);
-            label4.Name = "label4";
-            label4.Size = new Size(223, 54);
-            label4.TabIndex = 1;
-            label4.Text = "Customers";
+            customersLabel.AutoSize = true;
+            customersLabel.Font = new Font("Segoe UI", 30F, FontStyle.Bold);
+            customersLabel.Location = new Point(30, 198);
+            customersLabel.Name = "customersLabel";
+            customersLabel.Size = new Size(223, 54);
+            customersLabel.TabIndex = 1;
+            customersLabel.Text = "Customers";
             // 
             // pictureBox2
             // 
@@ -127,6 +130,7 @@
             Controls.Add(panel1);
             Name = "MainForm";
             Text = "Bookstore Manager";
+            Load += MainForm_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -141,10 +145,10 @@
         private Panel panel1;
         private PictureBox pictureBox1;
         private Label label2;
-        private Label label1;
+        private Label productsLabel;
         private Panel panel2;
         private Label label3;
-        private Label label4;
+        private Label customersLabel;
         private PictureBox pictureBox2;
     }
 }
